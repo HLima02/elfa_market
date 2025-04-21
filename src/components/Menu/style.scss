@@ -1,0 +1,15 @@
+.sidebar {
+  width: 100%;
+  max-width: 320px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #ff003c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}

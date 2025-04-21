@@ -10,7 +10,7 @@ type headingProp = {
 export default function Heading({title, ico:Ico}:headingProp) {
   return (
     <div className='heading'>
-      <h2><span>{<Ico />}</span> {title}</h2>
+      <h2><span>{<Ico/>}</span> {title}</h2>
     </div>
   )
 }

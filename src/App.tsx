@@ -11,7 +11,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/painel" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/lista_produtos" element={<ProductListing />} />
         <Route path="/cadastrar_produtos" element={<ProductRegistration />} />
       </Routes>

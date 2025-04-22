@@ -1,0 +1,21 @@
+.btn_register_area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  .btn_register {
+    padding: 15px 30px;
+      background-color: #ff003c;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 20px;
+      opacity: 0.8;
+  
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        transform: scale(1.1);
+      }
+  }
+}
+

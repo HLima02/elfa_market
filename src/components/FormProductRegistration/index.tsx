@@ -13,7 +13,7 @@ export default function FormProductRegistration() {
 
   const context = useContext(ProductContext)
   if(!context) { return }
-  const { prods, setProds, ProductRegisteation } = context
+  const { prods, ProductRegisteation } = context
 
   function handleFile(e: React.ChangeEvent<HTMLInputElement>){
     if(e.target.files) {

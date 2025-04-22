@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Menu from '../../components/Menu'
 import Heading from '../../components/Heading'
@@ -6,35 +6,47 @@ import ProductList from '../../components/ProductList'
 import { FaRegListAlt } from "react-icons/fa";
 import BtnRegistration from '../../components/BtnRegistration'
 import { ProductContext } from '../../contexts/produtos'
+import ProductFilter from '../../components/ProductFilter'
+
+import { Produto } from '../../services/productList'
 
 import './style.scss'
 
 export default function ProductListing() {
-
   const context = useContext(ProductContext)
   if(!context) { return }
   const {prods, setProds} = context
 
+  const [FilteredITem, setFilterdItem] = useState('')
+  const [auxList, setAuxList] = useState<Produto[]>([])
+
   useEffect(() => {
-  function loadList(){
     let list = JSON.parse(localStorage.getItem('@elfa-market') || '[]')
     setProds(list)
-    console.log(list)
-    console.log(Object.keys(list).length)
-  }
-
-  loadList()
-
+    setAuxList(list)
   }, [])
+
+  useEffect(() => {
+    if(FilteredITem.trim() === ''){
+      setAuxList(prods)
+      return
+    }
+
+    const filtered = prods.filter((produto:Produto) => 
+      produto.nome.toLowerCase().trim().includes(FilteredITem.toLowerCase().trim())
+    )
+    setAuxList(filtered)
+  }, [FilteredITem, prods])
 
   return (
     <div>
       <Menu />
        <div className='right_side'>
           <Heading ico={FaRegListAlt} title="Lista de produtos" />
-          {Object.keys(prods).length > 0 ? (
+          <ProductFilter filterName={FilteredITem} setFilterName={setFilterdItem} />
+          {Object.keys(auxList).length > 0 ? (
             <div>
-              <ProductList produtos={prods} />
+              <ProductList produtos={auxList} />
               <BtnRegistration path='/cadastrar_produtos' txt='Cadastrar mais produtos' />
             </div>
           ) : (
@@ -46,6 +58,7 @@ export default function ProductListing() {
             </div>
           )}
         </div>
+        
     </div>
   )
 }

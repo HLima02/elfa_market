@@ -51,16 +51,11 @@ export default function FormProductRegistration() {
       setDescription('')
       setBrand('')
 
-      console.log('lista: ', prodList )
     } else {
       toast.warning('Por favor, preencha todos os campos')
       return
     }
   }
-
-  useEffect(() => {
-    console.log(prods)
-  }, [])
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>

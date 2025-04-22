@@ -7,7 +7,7 @@ type ProdutosList = {
 }
 
 const ProductList: React.FC<ProdutosList> = ({ produtos }) => {
-  console.log(produtos)
+
   return (
     <table className='product_list'>
       <thead>

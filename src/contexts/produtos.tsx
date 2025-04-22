@@ -17,8 +17,14 @@ export default function ProductProvider({ children }:ProductProviderProps) {
     localStorage.setItem('@elfa-market', JSON.stringify(marketStorage))
   }
 
+  const ProductRemove = (item:Produto) => {
+    const filteredList = prods.filter((listItem) => listItem.id !== item.id)
+    setProds(filteredList)
+    localStorage.setItem('@elfa-market', JSON.stringify(filteredList))
+  }
+
   return (
-    <ProductContext.Provider value={{ prods, setProds, ProductRegisteation }}>
+    <ProductContext.Provider value={{ prods, setProds, ProductRegisteation, ProductRemove }}>
       {children}
     </ProductContext.Provider>
   )

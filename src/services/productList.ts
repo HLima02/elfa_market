@@ -15,5 +15,6 @@ export type Produto = {
 export type ProductContextType = {
   prods: Produto[],
   setProds: React.Dispatch<React.SetStateAction<Produto[]>>,
-  ProductRegisteation?: any
+  ProductRegisteation?: any,
+  ProductRemove?: any
 }

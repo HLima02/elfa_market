@@ -43,6 +43,8 @@ export default function ProductListing() {
     
   }, [FilteredITem, prods])
 
+  console.log(auxList)
+
   return (
     <div>
       <Menu />

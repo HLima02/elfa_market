@@ -30,7 +30,9 @@ export default function FormProductRegistration() {
       })
 
       const data = await res.json()
+      console.log(data)
       return data.secure_url 
+     
     } catch (err) {
       console.log("Erro ao subir a imagem", err)
       return null

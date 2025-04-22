@@ -17,3 +17,9 @@ ul, li { list-style-type: none;}
 a { text-decoration: none;}
 
 img { width: 100%;}
+
+.right_side {
+  margin-left: 320px;
+  width: calc(100% - 320px);
+  height: 80vh;
+}

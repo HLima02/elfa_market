@@ -11,8 +11,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/lista_produtos" element={<ProductListing />} />
+        {/* <Route path="/" element={<Dashboard />} /> */}
+        <Route path="/" element={<ProductListing />} />
         <Route path="/cadastrar_produtos" element={<ProductRegistration />} />
       </Routes>
     </BrowserRouter>

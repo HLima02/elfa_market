@@ -13,9 +13,10 @@ export default function Menu() {
     <div className='sidebar'>
       <h2><SiCoinmarketcap size={50}/> Elfa Market</h2>
       <div className='sidebar__links'>
-        <Link to="/"><span><RiHome2Line size={20}/> Painel</span> <span><IoIosArrowForward/></span></Link>
+        {/* <Link to="/"><span><RiHome2Line size={20}/> Painel</span> <span><IoIosArrowForward/></span></Link> */}
+        <Link to="/"><span><CiViewList size={20}/>Lista de produtos</span><span><IoIosArrowForward/></span></Link>
         <Link to="/cadastrar_produtos"><span><MdPlaylistAdd size={20}/> Cadastrar Produto</span> <span><IoIosArrowForward/></span></Link>
-        <Link to="/lista_produtos"><span><CiViewList size={20}/>Lista de produtos</span><span><IoIosArrowForward/></span></Link>
+        
       </div>
     </div>
   )

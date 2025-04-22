@@ -9,10 +9,6 @@ type FilterProps = {
 
 
 const ProductFilter:React.FC<FilterProps> = ({filterName, setFilterName}) => {
-  useEffect(() => {
-
-  })
-
   return (
     <div className='filter'>
       <IoSearch className='search_ico' />

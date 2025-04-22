@@ -27,15 +27,20 @@ export default function ProductListing() {
   }, [])
 
   useEffect(() => {
-    if(FilteredITem.trim() === ''){
-      setAuxList(prods)
-      return
-    }
+    const timeout = setTimeout(() => {
+      if(FilteredITem.trim() === ''){
+        setAuxList(prods)
+        return
+      }
+  
+      const filtered = prods.filter((produto:Produto) => 
+        produto.nome.toLowerCase().trim().includes(FilteredITem.toLowerCase().trim())
+      )
+      setAuxList(filtered)
+    }, 300)
 
-    const filtered = prods.filter((produto:Produto) => 
-      produto.nome.toLowerCase().trim().includes(FilteredITem.toLowerCase().trim())
-    )
-    setAuxList(filtered)
+    return () => clearInterval(timeout)
+    
   }, [FilteredITem, prods])
 
   return (

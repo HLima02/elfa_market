@@ -29,28 +29,32 @@ export default function FormProductRegistration() {
     e.preventDefault()
 
     if(name != '' && price != null && brand != ''){
-      let uidProd = genereteUID()
-      let uidBrand = genereteUID()
-
-      let prodList = prods
-      prodList.push({
-        id: uidProd,
-        nome: name,
-        preco: price,
-        descricao: description,
-        marca: {
-          id: uidBrand,
-          nome: brand
-        }
-      })
-
-      ProductRegisteation(prodList)
-      toast.success('Produto cadastrado com sucesso')
-      setName('')
-      setPrice(undefined)
-      setDescription('')
-      setBrand('')
-
+      if(price > 0) {
+        let uidProd = genereteUID()
+        let uidBrand = genereteUID()
+  
+        let prodList = prods
+        prodList.push({
+          id: uidProd,
+          nome: name,
+          preco: price,
+          descricao: description,
+          marca: {
+            id: uidBrand,
+            nome: brand
+          }
+        })
+  
+        ProductRegisteation(prodList)
+        toast.success('Produto cadastrado com sucesso')
+        setName('')
+        setPrice(undefined)
+        setDescription('')
+        setBrand('')
+      } else {
+        toast.warning('O preço deve ser um valor positivo, maior que zero.')
+        return
+      }
     } else {
       toast.warning('Por favor, preencha todos os campos')
       return

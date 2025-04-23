@@ -16,4 +16,15 @@
       margin-right: 10px;
     }
   }
+
+  @media only screen and (max-width: 1040px){
+    margin: 20px 0;
+  }
+
+  @media only screen and (max-width: 580px){
+    h2 {
+      font-size: 26px;
+    }
+  }
 }
+

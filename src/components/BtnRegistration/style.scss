@@ -5,17 +5,24 @@
   
   .btn_register {
     padding: 15px 30px;
-      background-color: #ff003c;
-      color: #fff;
-      border-radius: 10px;
-      font-size: 20px;
-      opacity: 0.8;
-  
-      &:hover {
-        transition: all 0.3s ease-in-out;
-        opacity: 1;
-        transform: scale(1.1);
-      }
+    background-color: #ff003c;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    opacity: 0.8;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @media only screen and (max-width: 580px){
+    .btn_register {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
   }
 }
 

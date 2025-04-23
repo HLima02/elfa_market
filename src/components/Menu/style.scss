@@ -1,60 +1,105 @@
 .sidebar {
-  width: 100%;
-  max-width: 320px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #ff003c;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 40px 0;
-
-  h2 {
-    font-size: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    svg {
-      padding-right: 5px;
-    }
-  }
-
-  .sidebar__links {
+  position: relative;
+  .sidebar_content {
+    width: 100%;
+    max-width: 320px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #ff003c;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 50px 5%;
-    width: 100%;
-    text-align: left;
-
-    a {
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+  
+    h2 {
+      font-size: 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
-      color: #fff;
-      padding: 5px;
-      margin-bottom: 20px;
-
-      &:hover {
-        transform: translateX(8px);
-        transition: all 0.3s ease-in-out;
+      svg {
+        padding-right: 5px;
+        font-size: 50px;
       }
-
-      span {
+    }
+  
+    .sidebar__links {
+      display: flex;
+      flex-direction: column;
+      padding: 50px 5%;
+      width: 100%;
+      text-align: left;
+  
+      a {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        color: #fff;
+        padding: 5px;
+        margin-bottom: 20px;
+  
+        &:hover {
+          transform: translateX(8px);
+          transition: all 0.3s ease-in-out;
+        }
+  
+        span {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          svg  {
+            margin-right: 10px;
+          }
+        }
+      }   
+    }
+  }
 
-        svg  {
-          margin-right: 10px;
+  @media only screen and (max-width: 1040px){
+    .sidebar_content {
+      max-width: 260px;
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+    max-width: 100%;
+
+    .sidebar_content {
+      max-width: 100%;
+      position: relative;  
+      padding: 15px 0;
+
+      h2 {
+        font-size: 25px;
+  
+        svg {
+          font-size: px;
         }
       }
-    }
 
-   
+      .sidebar__links {
+        padding: 0 5%;
+      }
+    }  
   }
+
+  // .label_menu {
+  //   background-color: #ff003c;
+  //   max-width: 100px;
+  //   width: 100%;
+  //   position: fixed;
+  //   padding: 5px 15px;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   cursor: pointer;
+  //   svg {
+  //     font-size: 20px;
+  //   }
+  // }
 }

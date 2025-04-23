@@ -28,8 +28,19 @@
     }
 
     .trash {
-      max-width: 40px;
+      width: 5%;
       cursor: pointer;
+    }
+
+    .see_product {
+      width: 18%;
+      button {
+        background-color: transparent;
+        border: none;
+        color: #ff003c;
+        font-size: 14px;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -9,6 +9,8 @@ type ProductProviderProps = {
 
 export default function ProductProvider({ children }:ProductProviderProps) {
   const [prods, setProds] = useState<Produto[]>([])
+  const [modalIsOpen, setModalISOpen] = useState<boolean>(false)
+  const [modalUrl, setModalUrl] = useState<string>('')
 
   const ProductRegisteation = (list:Produto[]) => {
     setProds(list)
@@ -24,7 +26,16 @@ export default function ProductProvider({ children }:ProductProviderProps) {
   }
 
   return (
-    <ProductContext.Provider value={{ prods, setProds, ProductRegisteation, ProductRemove }}>
+    <ProductContext.Provider value={{ 
+      prods, 
+      setProds, 
+      ProductRegisteation, 
+      ProductRemove, 
+      modalIsOpen, 
+      setModalISOpen,
+      modalUrl, 
+      setModalUrl
+    }}>
       {children}
     </ProductContext.Provider>
   )

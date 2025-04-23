@@ -1,0 +1,36 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 101vh;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal__content {
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    .close_ico {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 40px;
+      color: #ff003c;
+      transform: translateX(20px)  translateY(-20px);
+      background-color: #000;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

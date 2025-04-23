@@ -7,6 +7,7 @@ import { FaRegListAlt } from "react-icons/fa";
 import BtnRegistration from '../../components/BtnRegistration'
 import { ProductContext } from '../../contexts/produtos'
 import ProductFilter from '../../components/ProductFilter'
+import ProductImageModal from '../../components/ProductImageModal'
 
 import { Produto } from '../../services/productList'
 
@@ -48,24 +49,24 @@ export default function ProductListing() {
   return (
     <div>
       <Menu />
-       <div className='right_side'>
-          <Heading ico={FaRegListAlt} title="Lista de produtos" />
-          <ProductFilter filterName={FilteredITem} setFilterName={setFilterdItem} />
-          {Object.keys(auxList).length > 0 ? (
-            <div>
-              <ProductList produtos={auxList} />
-              <BtnRegistration path='/cadastrar_produtos' txt='Cadastrar mais produtos' />
-            </div>
-          ) : (
-            <div className='empty_list'>
-              <h2 >Lista de produtos vazia</h2>
-              <p>Ops! Parace que sua lista de produtos esta vazia. <br/>
-              Que tal cadastrar alguns itens? </p>
-              <BtnRegistration path='/cadastrar_produtos' txt='Cadastro de produto' />
-            </div>
-          )}
-        </div>
-        
+      <div className='right_side'>
+        <Heading ico={FaRegListAlt} title="Lista de produtos" />
+        <ProductFilter filterName={FilteredITem} setFilterName={setFilterdItem} />
+        {Object.keys(auxList).length > 0 ? (
+          <div>
+            <ProductList produtos={auxList} />
+            <BtnRegistration path='/cadastrar_produtos' txt='Cadastrar mais produtos' />
+          </div>
+        ) : (
+          <div className='empty_list'>
+            <h2 >Lista de produtos vazia</h2>
+            <p>Ops! Parace que sua lista de produtos esta vazia. <br/>
+            Que tal cadastrar alguns itens? </p>
+            <BtnRegistration path='/cadastrar_produtos' txt='Cadastro de produto' />
+          </div>
+        )}
+      </div>
+        <ProductImageModal/>
     </div>
   )
 }
